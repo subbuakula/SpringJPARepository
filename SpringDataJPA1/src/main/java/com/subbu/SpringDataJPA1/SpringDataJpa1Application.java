@@ -11,6 +11,8 @@ import org.springframework.context.ApplicationContext;
 
 import com.subbu.SpringDataJPA1.model.Vaccine;
 import com.subbu.SpringDataJPA1.service.VaccineServiceImpl;
+import com.subbu.SpringDataJPA1.view.ResultViewCompany;
+import com.subbu.SpringDataJPA1.view.ResultViewVaccineName;
 
 @SpringBootApplication
 public class SpringDataJpa1Application {
@@ -50,10 +52,13 @@ public class SpringDataJpa1Application {
 		vaccines.add(vaccine3);
 		vaccines.add(vaccine4);
 		*/
-		List<String> vaccineList = Arrays.asList("sputnik","Sputnik V","BioCubaFarma","Covovax");
-		service.findByVaccineNameInAndCostBetween(vaccineList, 250, 1000).forEach(v -> System.out.println(v));
+//		List<String> vaccineList = Arrays.asList("sputnik","Sputnik V","BioCubaFarma","Covovax");
+//		service.findByVaccineNameInAndCostBetween(vaccineList, 250, 1000).forEach(v -> System.out.println(v));
 
-		
+//		service.findByCostIs(350).forEach(v -> System.out.println(v.getVaccineName()));
+		service.findByCostLessThan(250, ResultViewCompany.class).forEach(v -> System.out.println(v.getCompanyName()));
+		System.out.println("===============================================================================");
+		service.findByCostLessThan(250, ResultViewVaccineName.class).forEach(v -> System.out.println(v.getVaccineName()));
 	}
 }
 

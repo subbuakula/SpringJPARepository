@@ -37,17 +37,16 @@ public class Vaccine
 		return "Vaccine [vid=" + vid + ", vName=" + vaccineName + ", companyName=" + companyName + ", cost=" + cost + "]";
 	}
 
-
 	public int getVid() {
 		return vid;
 	}
 	public void setVid(int vid) {
 		this.vid = vid;
 	}
-	public String getvName() {
+	public String getVaccineName() {
 		return vaccineName;
 	}
-	public void setvName(String vName) {
+	public void setVaccineName(String vName) {
 		this.vaccineName = vName;
 	}
 	public String getCompanyName() {
@@ -62,8 +61,4 @@ public class Vaccine
 	public void setCost(int cost) {
 		this.cost = cost;
 	}
-
-	
-	
-
 }

@@ -4,6 +4,8 @@ import java.util.Collection;
 import java.util.List;
 
 import com.subbu.SpringDataJPA1.model.Vaccine;
+import com.subbu.SpringDataJPA1.view.ResultViewVaccineName;
+import com.subbu.SpringDataJPA1.view.View;
 
 public interface VaccineService 
 {
@@ -15,6 +17,11 @@ public interface VaccineService
 	List<Vaccine> findByCostBetween(int cost1,int cost2);
 	List<Vaccine> findByVaccineName(String vName);
 	List<Vaccine> findByVaccineNameInAndCostBetween(Collection<String> vaccines, int minCost,int maxCost);
+	List<ResultViewVaccineName> findByCostIs(int cost);
+	
+	<T extends View> List<T> findByCostLessThan(int cost, Class<T> cls);
+
+
 
 
 

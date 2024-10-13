@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.subbu.SpringDataJPA1.model.Vaccine;
+import com.subbu.SpringDataJPA1.view.ResultViewVaccineName;
+import com.subbu.SpringDataJPA1.view.View;
 @Repository
 public interface VaccineDao extends JpaRepository<Vaccine, Integer> {
 	List<Vaccine> findByCompanyName(String name);
@@ -15,4 +17,7 @@ public interface VaccineDao extends JpaRepository<Vaccine, Integer> {
 	List<Vaccine> findByCostBetween(int cost1,int cost2);
 	List<Vaccine> findByVaccineName(String vName);
 	List<Vaccine> findByVaccineNameInAndCostBetween(Collection<String> vaccines, int minCost,int maxCost);
+	List<ResultViewVaccineName> findByCostIs(int cost);
+	
+	<T extends View> List<T> findByCostLessThan(int cost, Class<T> cls);
 }

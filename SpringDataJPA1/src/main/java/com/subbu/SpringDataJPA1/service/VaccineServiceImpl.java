@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 import com.subbu.SpringDataJPA1.dao.VaccineDao;
 import com.subbu.SpringDataJPA1.model.Vaccine;
+import com.subbu.SpringDataJPA1.view.ResultViewVaccineName;
+import com.subbu.SpringDataJPA1.view.View;
 
 @Service
 public class VaccineServiceImpl implements VaccineService {
@@ -58,6 +60,16 @@ public class VaccineServiceImpl implements VaccineService {
 	@Override
 	public List<Vaccine> findByVaccineNameInAndCostBetween(Collection<String> vaccines, int minCost, int maxCost) {
 		return dao.findByVaccineNameInAndCostBetween(vaccines, minCost, maxCost);
+	}
+
+	@Override
+	public List<ResultViewVaccineName> findByCostIs(int cost) {
+		return dao.findByCostIs(cost);
+	}
+
+	@Override
+	public <T extends View> List<T> findByCostLessThan(int cost,Class<T> cls) {
+		return dao.findByCostLessThan(cost, cls);
 	}
 
 }
