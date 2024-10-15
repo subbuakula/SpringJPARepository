@@ -72,4 +72,25 @@ public class VaccineServiceImpl implements VaccineService {
 		return dao.findByCostLessThan(cost, cls);
 	}
 
+	@Override
+	public List<Vaccine> searchByVaccineCompany(String companyName) {
+		return dao.searchByVaccineCompany(companyName);
+	}
+
+	@Override
+	public List<Vaccine> searchByVaccineCompany(String companyName1, String companyName2) {
+		return dao.searchByVaccineCompany(companyName1, companyName2);
+	}
+
+	@Override
+	public List<String> searchVaccinesByPriceRange(int minPrice, int maxPrice) {
+		return dao.searchVaccinesByPriceRange(minPrice, maxPrice);
+	}
+
+	@Override
+	public List<Vaccine> searchVaccineByVaccineNames(String v1, String v2) {
+		return dao.searchVaccineByVaccineNames(v1, v2);
+	}
+
+	
 }

@@ -26,6 +26,13 @@ public class Vaccine
 	}
 	
 	
+	public Vaccine(String companyName, int cost) {
+		super();
+		this.companyName = companyName;
+		this.cost = cost;
+	}
+
+
 	public Vaccine(String vaccineName, String companyName, int cost) {
 		super();
 		this.vaccineName = vaccineName;

@@ -56,9 +56,16 @@ public class SpringDataJpa1Application {
 //		service.findByVaccineNameInAndCostBetween(vaccineList, 250, 1000).forEach(v -> System.out.println(v));
 
 //		service.findByCostIs(350).forEach(v -> System.out.println(v.getVaccineName()));
-		service.findByCostLessThan(250, ResultViewCompany.class).forEach(v -> System.out.println(v.getCompanyName()));
-		System.out.println("===============================================================================");
-		service.findByCostLessThan(250, ResultViewVaccineName.class).forEach(v -> System.out.println(v.getVaccineName()));
+//		service.findByCostLessThan(250, ResultViewCompany.class).forEach(v -> System.out.println(v.getCompanyName()));
+//		System.out.println("===============================================================================");
+//		service.findByCostLessThan(250, ResultViewVaccineName.class).forEach(v -> System.out.println(v.getVaccineName()));
+		
+//		service.searchByVaccineCompany("BioCubaFarma")
+//					.forEach(v -> System.out.println(v));
+//		service.searchByVaccineCompany("BioCubaFarma", "Bharat Biotech")
+//							.forEach(v -> System.out.println(v));
+//		service.searchVaccinesByPriceRange(250, 1000).forEach(name -> System.out.println(name));
+		service.searchVaccineByVaccineNames("Moderna", "Covovax").forEach(v -> System.out.println(v)) ;
 	}
 }
 

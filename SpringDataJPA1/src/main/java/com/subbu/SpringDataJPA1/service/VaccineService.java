@@ -20,9 +20,10 @@ public interface VaccineService
 	List<ResultViewVaccineName> findByCostIs(int cost);
 	
 	<T extends View> List<T> findByCostLessThan(int cost, Class<T> cls);
-
-
-
-
-
+	
+	List<Vaccine> searchByVaccineCompany(String companyName);
+	List<Vaccine> searchByVaccineCompany(String companyName1, String companyName2);
+	List<String> searchVaccinesByPriceRange(int minPrice, int maxPrice);
+	
+	List<Vaccine> searchVaccineByVaccineNames(String v1, String v2);
 }
