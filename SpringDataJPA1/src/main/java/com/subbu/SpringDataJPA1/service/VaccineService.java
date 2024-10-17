@@ -2,6 +2,7 @@ package com.subbu.SpringDataJPA1.service;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 import com.subbu.SpringDataJPA1.model.Vaccine;
 import com.subbu.SpringDataJPA1.view.ResultViewVaccineName;
@@ -25,5 +26,7 @@ public interface VaccineService
 	List<Vaccine> searchByVaccineCompany(String companyName1, String companyName2);
 	List<String> searchVaccinesByPriceRange(int minPrice, int maxPrice);
 	
-	List<Vaccine> searchVaccineByVaccineNames(String v1, String v2);
+	List<Object[]> searchCompanyAndCostByVaccineNamesUsingObjArr(String v1, String v2);
+	
+	List<Map<String, String>>searchCompanyAndCostByVaccineNamesUsingMapObj(int id1,int id2, int id3);
 }

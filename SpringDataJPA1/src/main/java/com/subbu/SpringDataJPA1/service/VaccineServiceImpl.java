@@ -2,6 +2,7 @@ package com.subbu.SpringDataJPA1.service;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
@@ -88,9 +89,12 @@ public class VaccineServiceImpl implements VaccineService {
 	}
 
 	@Override
-	public List<Vaccine> searchVaccineByVaccineNames(String v1, String v2) {
-		return dao.searchVaccineByVaccineNames(v1, v2);
+	public List<Object[]> searchCompanyAndCostByVaccineNamesUsingObjArr(String v1, String v2) {
+		return dao.searchCompanyAndCostByVaccineNamesUsingObjArr(v1, v2);
 	}
 
-	
+	@Override
+	public List<Map<String, String>> searchCompanyAndCostByVaccineNamesUsingMapObj(int id1, int id2, int id3) {
+		return dao.searchCompanyAndCostByVaccineNamesUsingMapObj(id1, id2, id3);
+	}
 }

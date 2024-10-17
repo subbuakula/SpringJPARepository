@@ -65,7 +65,8 @@ public class SpringDataJpa1Application {
 //		service.searchByVaccineCompany("BioCubaFarma", "Bharat Biotech")
 //							.forEach(v -> System.out.println(v));
 //		service.searchVaccinesByPriceRange(250, 1000).forEach(name -> System.out.println(name));
-		service.searchVaccineByVaccineNames("Moderna", "Covovax").forEach(v -> System.out.println(v)) ;
+//		service.searchCompanyAndCostByVaccineNamesUsingObjArr("Moderna", "Covovax").forEach(v -> System.out.println(v[0]+"->"+v[1]));
+        service.searchCompanyAndCostByVaccineNamesUsingMapObj(4, 7, 10).forEach(v -> System.out.println(v.entrySet()));	
 	}
 }
 
