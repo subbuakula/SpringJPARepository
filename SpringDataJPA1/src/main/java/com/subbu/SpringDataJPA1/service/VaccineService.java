@@ -29,4 +29,10 @@ public interface VaccineService
 	List<Object[]> searchCompanyAndCostByVaccineNamesUsingObjArr(String v1, String v2);
 	
 	List<Map<String, String>>searchCompanyAndCostByVaccineNamesUsingMapObj(int id1,int id2, int id3);
+
+	//Modifying operations.
+	int updateVaccineCost(Integer cost, String name);
+	
+    int updateVaccineCompany(String company, String name);
+
 }

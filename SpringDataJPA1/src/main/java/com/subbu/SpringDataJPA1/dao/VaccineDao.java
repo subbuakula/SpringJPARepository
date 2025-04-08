@@ -6,9 +6,11 @@ import java.util.Map;
 import java.util.TreeMap;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.subbu.SpringDataJPA1.model.Vaccine;
 import com.subbu.SpringDataJPA1.view.CompanyNameAndCostView;
@@ -52,4 +54,15 @@ public interface VaccineDao extends JpaRepository<Vaccine, Integer>
 	//Retrieving two column values using Map Object.
 	 @Query("SELECT companyName,vaccineName FROM Vaccine WHERE vid IN(:id1,:id2,:id3)")
 	 List<Map<String, String>> searchCompanyAndCostByVaccineNamesUsingMapObj(int id1,@Param("id2")int vid,int id3);
+
+	 @Transactional
+	 @Modifying
+	 @Query("UPDATE Vaccine SET cost=:newCost WHERE vaccineName =:vName")
+	 int updateVaccineCost(@Param("newCost") Integer cost, @Param("vName") String name);
+	 
+	 @Transactional
+	 @Modifying
+	 @Query(value = "UPDATE vaccineinfo SET companyName=:newCompany WHERE VaccineName =:vName", nativeQuery = true)
+	 int updateVaccineCompany(@Param("newCompany") String company, @Param("vName") String name);
+	 
 }

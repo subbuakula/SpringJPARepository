@@ -97,4 +97,14 @@ public class VaccineServiceImpl implements VaccineService {
 	public List<Map<String, String>> searchCompanyAndCostByVaccineNamesUsingMapObj(int id1, int id2, int id3) {
 		return dao.searchCompanyAndCostByVaccineNamesUsingMapObj(id1, id2, id3);
 	}
+
+	@Override
+	public int updateVaccineCost(Integer cost, String name) {
+		return dao.updateVaccineCost(cost, name);
+	}
+
+	@Override
+	public int updateVaccineCompany(String company, String name) {
+		return dao.updateVaccineCompany(company, name);
+	}
 }

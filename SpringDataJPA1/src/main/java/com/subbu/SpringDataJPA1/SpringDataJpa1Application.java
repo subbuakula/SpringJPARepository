@@ -1,18 +1,10 @@
 package com.subbu.SpringDataJPA1;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-import com.subbu.SpringDataJPA1.model.Vaccine;
 import com.subbu.SpringDataJPA1.service.VaccineServiceImpl;
-import com.subbu.SpringDataJPA1.view.ResultViewCompany;
-import com.subbu.SpringDataJPA1.view.ResultViewVaccineName;
 
 @SpringBootApplication
 public class SpringDataJpa1Application {
@@ -66,7 +58,11 @@ public class SpringDataJpa1Application {
 //							.forEach(v -> System.out.println(v));
 //		service.searchVaccinesByPriceRange(250, 1000).forEach(name -> System.out.println(name));
 //		service.searchCompanyAndCostByVaccineNamesUsingObjArr("Moderna", "Covovax").forEach(v -> System.out.println(v[0]+"->"+v[1]));
-        service.searchCompanyAndCostByVaccineNamesUsingMapObj(4, 7, 10).forEach(v -> System.out.println(v.entrySet()));	
+//      service.searchCompanyAndCostByVaccineNamesUsingMapObj(4, 7, 10).forEach(v -> System.out.println(v.entrySet()));	
+        
+//        System.out.println("No of records updated = " +service.updateVaccineCost(1500, "Soberana 02"));     
+	
+		System.out.println("No of records Update: = "+service.updateVaccineCompany("Sudheer Vaccines" , "Sinovac"));
 	}
 }
 
